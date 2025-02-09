@@ -25,6 +25,17 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
+// Create a new file to handle all image imports
+import slider1 from '../public/images/slider1.png'
+import slider2 from '../public/images/slider2.png'
+import slider3 from '../public/images/slider3.jpeg'
+import slider4 from '../public/images/slider4.jpeg'
+import slider5 from '../public/images/slider5.jpeg'
+import slider6 from '../public/images/slider6.jpeg'
+import slider7 from '../public/images/slider7.jpeg'
+import slider18 from '../public/images/slider18.jpeg'
+import slider16 from '../public/images/slider16.jpeg'
+
 function App() {
   const [rsvpForm, setRsvpForm] = useState({
     name: '',
@@ -62,14 +73,18 @@ function App() {
     },
   }
 
-  const weddingDate = new Date('2025-03-08T14:00:00')
+  const weddingDate = new Date('2025-03-06T14:00:00')
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+    slider1,
+    slider2,
+    slider3,
+    slider4,
+    slider5,
+    slider6,
+    slider7,
+    slider16,
+    slider18,
   ]
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -178,7 +193,7 @@ function App() {
             transition={{ delay: 1.2 }}
             className='text-2xl font-serif tracking-widest'
           >
-            March 8, 2025
+            March 6, 2025
           </motion.p>
         </motion.div>
         <motion.div
@@ -192,7 +207,9 @@ function App() {
             ease: 'easeInOut',
           }}
         >
-          <div className='text-white text-sm tracking-wider text-center'>Scroll Down</div>
+          <div className='text-white text-sm tracking-wider text-center'>
+            Scroll Down
+          </div>
           <div className='w-px h-8 bg-white/50 mx-auto mt-2'></div>
         </motion.div>
       </section>
@@ -261,7 +278,7 @@ function App() {
             >
               <div className='image-frame rounded-full overflow-hidden w-72 h-72 mx-auto mb-8 shadow-xl'>
                 <img
-                  src='../images/pd.jpg'
+                  src='../images/Details.jpeg'
                   alt='Bride'
                   className='w-full h-full object-cover transform transition-transform duration-700 hover:scale-110'
                 />
@@ -349,7 +366,7 @@ function App() {
                 <h3 className='text-2xl font-script gradient-text mb-2'>
                   The Date
                 </h3>
-                <p className='text-gray-600'>March 8, 2025</p>
+                <p className='text-gray-600'>March 6, 2025</p>
               </motion.div>
 
               <motion.div
