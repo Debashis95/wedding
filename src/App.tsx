@@ -278,7 +278,7 @@ function App() {
             >
               <div className='image-frame rounded-full overflow-hidden w-72 h-72 mx-auto mb-8 shadow-xl'>
                 <img
-                  src='../images/Details.jpeg'
+                  src='../images/Details.jpg'
                   alt='Bride'
                   className='w-full h-full object-cover transform transition-transform duration-700 hover:scale-110'
                 />
