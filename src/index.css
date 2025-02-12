@@ -45,13 +45,16 @@
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
-
-.gradient-text {
-  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.text-shadow-lg {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.gradient-text {
+  background: linear-gradient(45deg, #ff6b6b, #ff8787, #ffa8a8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .hero-overlay {
   background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
 }
