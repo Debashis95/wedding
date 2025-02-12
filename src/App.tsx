@@ -606,6 +606,18 @@ function App() {
           </motion.div>
         </motion.div>
       </section>
+          {/* <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center pt-8 border-t border-orange-200"
+        >
+          <p className="text-gray-600 flex items-center justify-center">
+            Made with 
+            <Heart className="w-4 h-4 text-orange-500 mx-2" />
+            by Dabashis & Papiya
+          </p>
+        </motion.div> */}
     </div>
   );
 }

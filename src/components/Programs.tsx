@@ -52,7 +52,7 @@ const Programs = () => {
           className="text-center mb-16"
         >
           <Ring className="w-8 h-8 text-pink-500 mx-auto mb-4" />
-          <h2 className="text-4xl font-serif text-gray-800 mb-4">Wedding Day Schedule</h2>
+          <h2 className="text-4xl font-serif text-gray-800 mb-4">Reception Day Schedule</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Join us as we celebrate our special day with love, joy, and cherished moments
           </p>
