@@ -35,7 +35,7 @@ import slider6 from "../public/images/slider6.jpeg";
 import slider7 from "../public/images/slider7.jpeg";
 import slider18 from "../public/images/slider18.jpeg";
 import slider16 from "../public/images/slider16.jpeg";
-import Programs from "./components/Programs";
+import Programs from "./Programs";
 
 function App() {
   const [rsvpForm, setRsvpForm] = useState({
