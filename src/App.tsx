@@ -121,6 +121,7 @@ function App() {
 
   return (
     <div className="bg-[#fdf9f3] overflow-hidden">
+
       {/* Floating Hearts Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {[...Array(8)].map((_, i) => (
@@ -141,6 +142,7 @@ function App() {
       </div>
 
       {/* Hero Section */}
+
       <section
         className="min-h-screen relative flex items-center justify-center bg-cover bg-center bg-fixed overflow-hidden"
         style={{
@@ -228,6 +230,7 @@ function App() {
           <Countdown date={weddingDate} renderer={CountdownRenderer} />
         </motion.div>
       </section>
+
       {/* Couple Section */}
       <section
         ref={ref}
@@ -310,6 +313,7 @@ function App() {
           </div>
         </div>
       </section>
+
       {/* Gallery Section */}
       <section className="py-24 bg-gradient-to-b from-white to-rose-50/50">
         <div className="container mx-auto px-4">
@@ -336,12 +340,11 @@ function App() {
             pagination={{
               dynamicBullets: true,
             }}
-            navigation={true}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
             }}
-            modules={[EffectCoverflow, Pagination, Navigation, Autoplay]}
+            modules={[EffectCoverflow, Pagination, Autoplay]}
             className="max-w-5xl"
           >
             {galleryImages.map((image, index) => (
