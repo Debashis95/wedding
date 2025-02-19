@@ -1,29 +1,26 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import {
   Heart,
   Calendar,
   MapPin,
   Clock,
-  Mail,
-  Phone,
   Send,
-  Music,
-  Gift,
 } from "lucide-react";
 import Countdown from "react-countdown";
 import { Swiper, SwiperSlide } from "swiper/react";
 import {
   EffectCoverflow,
   Pagination,
-  Navigation,
   Autoplay,
 } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import supabase from "./utils/supabase";
+import { Toaster, toast } from 'sonner';
 
 // Create a new file to handle all image imports
 import slider1 from "../public/images/slider1.png";
@@ -87,12 +84,39 @@ function App() {
     slider16,
     slider18,
   ];
-
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", rsvpForm);
-    alert("Thank you for your RSVP!");
+    
+    console.log("Submitting RSVP:", rsvpForm); // Debugging
+    
+    try {
+      const { data, error } = await supabase
+        .from("rsvp")
+        .insert([
+          {
+            name: rsvpForm.name,
+            email: rsvpForm.email,
+            attending: rsvpForm.attending,
+            guests: parseInt(rsvpForm.guests, 10), // Ensure it's a number
+            message: rsvpForm.message,
+          },
+        ]);
+  
+      if (error) {
+        console.error("Supabase error:", error);
+        // alert("Error submitting RSVP: " + error.message);
+        return;
+      }
+  
+      toast.success("Thank you for your RSVP!");
+      setRsvpForm({ name: "", email: "", attending: "yes", guests: "1", message: "" });
+  
+    } catch (error) {
+      // alert("Error submitting RSVP. Please try again.");
+      console.error("Submission error:", error);
+    }
   };
+  
     const CountdownRenderer = ({ days, hours, minutes, seconds }: any) => (
       <div className="grid grid-cols-4 gap-2 sm:gap-6 max-w-2xl mx-auto px-4">
         {[
@@ -121,6 +145,7 @@ function App() {
     );
   return (
     <div className="bg-[#fdf9f3] overflow-hidden">
+       <Toaster position="top-right" richColors/>
 
       {/* Floating Hearts Background */}
       <div className="fixed inset-0 pointer-events-none z-0">
@@ -606,18 +631,6 @@ function App() {
           </motion.div>
         </motion.div>
       </section>
-          {/* <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center pt-8 border-t border-orange-200"
-        >
-          <p className="text-gray-600 flex items-center justify-center">
-            Made with 
-            <Heart className="w-4 h-4 text-orange-500 mx-2" />
-            by Dabashis & Papiya
-          </p>
-        </motion.div> */}
     </div>
   );
 }
