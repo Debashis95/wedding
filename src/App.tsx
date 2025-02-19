@@ -93,32 +93,32 @@ function App() {
     console.log("Form submitted:", rsvpForm);
     alert("Thank you for your RSVP!");
   };
-
-  const CountdownRenderer = ({ days, hours, minutes, seconds }: any) => (
-    <div className="grid grid-cols-4 gap-6 max-w-2xl mx-auto">
-      {[
-        { value: days, label: "Days" },
-        { value: hours, label: "Hours" },
-        { value: minutes, label: "Minutes" },
-        { value: seconds, label: "Seconds" },
-      ].map(({ value, label }) => (
-        <motion.div
-          key={label}
-          className="text-center countdown-item"
-          whileHover={{ scale: 1.05 }}
-          transition={{ type: "spring", stiffness: 300 }}
-        >
-          <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-6">
-            <div className="text-4xl font-script gradient-text">{value}</div>
-            <div className="text-sm font-medium text-gray-600 mt-2">
-              {label}
+    const CountdownRenderer = ({ days, hours, minutes, seconds }: any) => (
+      <div className="grid grid-cols-4 gap-2 sm:gap-6 max-w-2xl mx-auto px-4">
+        {[
+          { value: days, label: "Days" },
+          { value: hours, label: "Hours" },
+          { value: minutes, label: "Minutes" },
+          { value: seconds, label: "Seconds" },
+        ].map(({ value, label }) => (
+          <motion.div
+            key={label}
+            className="text-center countdown-item"
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg p-2 sm:p-6">
+              <div className="text-2xl sm:text-4xl font-script gradient-text">
+                {value.toString().padStart(2, '0')}
+              </div>
+              <div className="text-xs sm:text-sm font-medium text-gray-600 mt-1 sm:mt-2">
+                {label}
+              </div>
             </div>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  );
-
+          </motion.div>
+        ))}
+      </div>
+    );
   return (
     <div className="bg-[#fdf9f3] overflow-hidden">
 
