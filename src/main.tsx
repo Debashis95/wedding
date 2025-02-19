@@ -1,7 +1,7 @@
 import { createRoot } from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router";
+import { createBrowserRouter, RouterProvider, } from "react-router";
 import { Rsvp } from "./components/Rsvp.tsx";
 import { useState } from "react";
 
